@@ -1,0 +1,423 @@
+.bis-app-shell {
+  --bis-ink: #1d2b45;
+  --bis-muted: #78869d;
+  --bis-soft: #99a5b8;
+  --bis-line: #e8edf4;
+  --bis-purple: #606ff0;
+  min-height: 100vh;
+  color: var(--bis-ink);
+  background: #f6f8fc;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.bis-app-shell button { font: inherit; }
+.bis-app-shell button:focus-visible, .bis-app-shell select:focus-visible, .bis-app-shell input:focus-visible, .bis-app-shell a:focus-visible {
+  outline: 3px solid #8791fb77;
+  outline-offset: 2px;
+}
+.bis-sidebar {
+  width: 258px;
+  height: 100vh;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  padding: 23px 15px 12px;
+  background: #fff;
+  border-right: 1px solid #e9edf4;
+}
+.bis-brand { display: flex; align-items: center; gap: 10px; height: 40px; margin: 0 8px 26px; color: #23314b; text-decoration: none; font: 800 14px/1.05 Manrope, sans-serif; letter-spacing: -.5px; }
+.bis-brand-mark { width: 35px; height: 35px; display: grid; place-items: center; color: #fff; background: linear-gradient(145deg, #7784ff, #5263e7); border-radius: 11px; box-shadow: 0 5px 12px #5869e333; }
+.bis-brand small { display: block; margin-top: 4px; color: #8995a8; font: 700 8px/1 'DM Sans', sans-serif; letter-spacing: 2px; }
+.bis-workspace-card { display: flex; align-items: center; gap: 9px; padding: 10px 9px; margin-bottom: 25px; border: 1px solid #e8ecf3; border-radius: 9px; }
+.bis-workspace-mark { width: 33px; height: 33px; display: grid; place-items: center; flex-shrink: 0; color: #6975e8; background: #eff0ff; border-radius: 8px; }
+.bis-workspace-card > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 4px; min-width: 0; }
+.bis-workspace-card strong { overflow: hidden; color: #35435c; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.bis-workspace-card small { overflow: hidden; color: #909cb0; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.bis-workspace-card > svg { flex-shrink: 0; color: #94a0b1; }
+.bis-category-icon { width: 36px; height: 36px; display: grid; place-items: center; flex-shrink: 0; border-radius: 10px; }
+.bis-category-icon.violet { color: #6b67d9; background: #f0efff; }
+.bis-category-icon.blue { color: #4c80d7; background: #edf4ff; }
+.bis-category-icon.orange { color: #d78a4c; background: #fff3e8; }
+.bis-category-icon.green { color: #3d9b7a; background: #eaf7f1; }
+.bis-category-icon.pink { color: #c46c9a; background: #fff0f6; }
+.bis-category-icon.teal { color: #378e9b; background: #e8f7f8; }
+.bis-side-label, .bis-eyebrow { color: #9aa5b7; font-size: 9px; font-weight: 700; letter-spacing: 1.15px; }
+.bis-side-label { padding: 0 10px; margin-bottom: 10px; }
+.bis-nav { display: grid; gap: 4px; }
+.bis-nav-item { width: 100%; min-height: 41px; display: flex; align-items: center; gap: 10px; padding: 0 10px; color: #77849a; text-align: left; background: transparent; border: 0; border-radius: 7px; font-size: 10px; font-weight: 500; transition: background .17s, color .17s; }
+.bis-nav-item:not(:disabled):hover { color: #4b5a73; background: #f6f7fb; }
+.bis-nav-item.active { color: #5a69e8; background: #f0f2ff; font-weight: 700; }
+.bis-nav-item:disabled { cursor: not-allowed; opacity: .46; }
+.bis-nav-icon { width: 20px; display: grid; place-items: center; flex-shrink: 0; }
+.bis-nav-item.active .bis-nav-icon, .bis-nav-item.complete .bis-nav-icon { color: #6574e9; }
+.bis-nav-item > i { width: 5px; height: 5px; margin-left: auto; background: #6675ee; border-radius: 50%; }
+.bis-sidebar-foot { margin-top: auto; }
+.bis-privacy-card { padding: 12px; background: linear-gradient(145deg, #f8f8ff, #f5f7fc); border: 1px solid #eceef8; border-radius: 9px; }
+.bis-privacy-card > span { width: 26px; height: 26px; display: grid; place-items: center; margin-bottom: 8px; color: #6974df; background: #eaeaff; border-radius: 7px; }
+.bis-privacy-card strong { display: block; color: #45516a; font-size: 10px; }
+.bis-privacy-card p { margin: 5px 0 0; color: #8995a8; font-size: 9px; line-height: 1.55; }
+.bis-reset-button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 12px 8px; color: #6774e8; background: transparent; border: 0; font-size: 10px; font-weight: 600; text-align: left; }
+.bis-sidebar-owner { display: flex; align-items: center; gap: 9px; padding: 12px 3px 2px; margin-top: 3px; border-top: 1px solid #edf0f5; }
+.bis-owner-avatar, .bis-user-avatar { width: 31px; height: 31px; display: grid; place-items: center; flex-shrink: 0; color: #fff; background: linear-gradient(145deg, #8997f1, #6863c5); border-radius: 50%; font-size: 9px; font-weight: 700; }
+.bis-sidebar-owner > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 3px; }
+.bis-sidebar-owner strong { color: #46536b; font-size: 10px; }.bis-sidebar-owner small { color: #939daf; font-size: 8px; }.bis-owner-menu { color: #939daf; font-size: 16px; }
+.bis-main { min-height: 100vh; margin-left: 258px; }
+.bis-topbar { height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 34px; background: #fff; border-bottom: 1px solid #ebeff5; }
+.bis-breadcrumb, .bis-top-right { display: flex; align-items: center; }
+.bis-breadcrumb { gap: 9px; color: #98a3b4; font-size: 10px; }
+.bis-breadcrumb strong { color: #4d5a72; font-weight: 600; }.bis-breadcrumb svg { color: #adb6c3; }
+.bis-top-right { gap: 13px; }
+.bis-top-chip, .bis-local-chip { display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px; color: #718097; background: #f7f8fb; border: 1px solid #edf0f5; border-radius: 6px; font-size: 8px; font-weight: 600; }
+.bis-top-chip .bis-category-icon { width: 17px; height: 17px; background: transparent; }
+.bis-local-chip > span { width: 6px; height: 6px; display: inline-block; background: #69b294; border-radius: 50%; }
+.bis-user-avatar { width: 29px; height: 29px; }
+.bis-mobile-menu { display: none; }
+.bis-content { max-width: 1600px; padding: 29px 35px 20px; margin: 0 auto; }
+.bis-page-wrap { max-width: 1130px; margin: 0 auto; }.bis-wide-wrap { max-width: 1450px; }
+.bis-page-title { display: flex; align-items: flex-end; justify-content: space-between; gap: 18px; margin-bottom: 18px; }
+.bis-page-title h1 { margin: 8px 0 5px; color: #1f2c43; font: 700 24px/1.25 Manrope, sans-serif; letter-spacing: -.8px; }
+.bis-page-title p { margin: 0; color: #8290a4; font-size: 11px; line-height: 1.55; }
+.bis-title-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.bis-button { min-height: 35px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 0 12px; border: 1px solid transparent; border-radius: 7px; font-size: 9px; font-weight: 600; white-space: nowrap; transition: background .15s, border-color .15s, transform .15s; }
+.bis-button-primary { color: #fff; background: #606ff0; border-color: #606ff0; box-shadow: 0 2px 4px #596bf122; }
+.bis-button-primary:hover { background: #4e5edd; transform: translateY(-1px); }
+.bis-button-quiet { color: #627087; background: #fff; border-color: #e5e9f0; }
+.bis-button-quiet:hover { color: #5665df; background: #f8f8ff; border-color: #d9ddfa; }
+.bis-progress { display: flex; align-items: center; margin: 23px 0 25px; }
+.bis-progress-step { display: flex; align-items: center; gap: 7px; min-width: 0; color: #a1aaba; }
+.bis-progress-step > span { width: 22px; height: 22px; display: grid; place-items: center; flex-shrink: 0; background: #eff1f5; border: 1px solid #e8ebf1; border-radius: 50%; font-size: 8px; font-weight: 700; }
+.bis-progress-step small { overflow: hidden; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.bis-progress-step.done { color: #58667f; }.bis-progress-step.done > span { color: #fff; background: #6875e9; border-color: #6875e9; }
+.bis-progress-step.current small { color: #4e5cd2; font-weight: 700; }
+.bis-progress-step > i { width: clamp(14px, 4vw, 58px); height: 1px; margin: 0 10px; background: #e2e7ef; }
+.bis-category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
+.bis-category-card { min-height: 176px; position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 16px 16px 14px; overflow: hidden; color: inherit; text-align: left; background: #fff; border: 1px solid #e8edf4; border-radius: 11px; box-shadow: 0 2px 5px #1f325308; transition: transform .18s, box-shadow .18s, border-color .18s; }
+.bis-category-card:hover { transform: translateY(-2px); border-color: #d8ddf8; box-shadow: 0 9px 22px #26375b0c; }
+.bis-category-card-top { width: 100%; display: flex; align-items: center; justify-content: space-between; }
+.bis-category-card-top > span:last-child { color: #b0b8c5; font: 600 9px Manrope, sans-serif; }
+.bis-category-card h2 { margin: 16px 0 5px; color: #35425a; font: 700 12px/1.35 Manrope, sans-serif; }
+.bis-category-card p { max-width: 230px; margin: 0; color: #8793a7; font-size: 9px; line-height: 1.6; }
+.bis-category-choose { display: flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 13px; color: #6773e6; font-size: 9px; font-weight: 700; }
+.bis-how-note { display: flex; align-items: center; gap: 10px; padding: 12px 14px; margin-top: 17px; background: #f0f2ff; border: 1px solid #e6e9ff; border-radius: 8px; }
+.bis-how-note > span { width: 27px; height: 27px; display: grid; place-items: center; flex-shrink: 0; color: #6a75e5; background: #e3e7ff; border-radius: 7px; }
+.bis-how-note p { margin: 0; color: #727e97; font-size: 9px; line-height: 1.55; }.bis-how-note strong { color: #4e5a80; }
+.bis-upload-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(245px, .75fr); gap: 15px; }
+.bis-card { min-width: 0; background: #fff; border: 1px solid #e8edf4; border-radius: 10px; box-shadow: 0 2px 5px #20335505; }
+.bis-upload-card { padding: 16px; }
+.bis-existing-dataset { display: flex; align-items: center; gap: 9px; padding: 10px; margin-bottom: 12px; background: #f7f8fc; border: 1px solid #edf0f5; border-radius: 7px; }
+.bis-file-badge { width: 33px; height: 35px; display: grid; place-items: center; flex-shrink: 0; color: #6074df; background: #eef0ff; border-radius: 7px; }
+.bis-existing-dataset > span:nth-child(2), .bis-file-summary > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 4px; min-width: 0; }
+.bis-existing-dataset strong, .bis-file-summary strong { overflow: hidden; color: #44516a; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.bis-existing-dataset small, .bis-file-summary small { color: #909bad; font-size: 8px; }
+.bis-link-button { padding: 4px; color: #6471e6; background: transparent; border: 0; font-size: 8px; font-weight: 700; white-space: nowrap; }
+.bis-dropzone { min-height: 273px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 17px; background: #fbfcff; border: 1.5px dashed #d7ddea; border-radius: 9px; cursor: pointer; transition: background .2s, border-color .2s; }
+.bis-dropzone:hover, .bis-dropzone.dragging { background: #f6f7ff; border-color: #7885f0; }
+.bis-dropzone.has-error { background: #fffafa; border-color: #e1a09d; }
+.bis-dropzone.is-loading { cursor: progress; }
+.bis-upload-glyph { width: 50px; height: 50px; display: grid; place-items: center; color: #6675ec; background: #eeefff; border-radius: 14px; }
+.bis-upload-glyph.spinning svg { animation: bis-float 1.2s ease-in-out infinite alternate; }
+@keyframes bis-float { to { transform: translateY(-4px); } }
+.bis-dropzone h2 { max-width: 100%; overflow: hidden; margin: 14px 0 5px; color: #39465e; font: 700 13px Manrope, sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.bis-dropzone p { margin: 0; color: #909bae; font-size: 9px; }.bis-inline-link { padding: 0; color: #6572e5; background: transparent; border: 0; font-size: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.bis-format-tags { display: flex; gap: 6px; margin-top: 17px; }.bis-format-tags span { padding: 5px 7px; color: #758199; background: #f0f2f7; border-radius: 4px; font-size: 7px; font-weight: 700; letter-spacing: .3px; }.bis-format-tags span:last-child { color: #9ba5b4; background: transparent; }
+.bis-alert { display: flex; gap: 9px; padding: 10px 11px; margin-top: 11px; border-radius: 7px; font-size: 9px; line-height: 1.55; }.bis-alert-error { color: #a6504b; background: #fff0ee; border: 1px solid #f7dedb; }.bis-alert-error svg { flex-shrink: 0; }
+.bis-upload-foot { display: flex; justify-content: space-between; gap: 8px; padding: 13px 3px 0; color: #98a3b3; font-size: 8px; }.bis-upload-foot span:first-child { display: flex; align-items: center; gap: 5px; }
+.bis-upload-aside, .bis-mapping-aside { display: grid; align-content: start; gap: 12px; }
+.bis-file-guide { padding: 16px; }.bis-mini-heading { display: flex; align-items: center; gap: 8px; margin-bottom: 13px; }.bis-mini-heading > span { width: 27px; height: 27px; display: grid; place-items: center; color: #6573e7; background: #f0f1ff; border-radius: 7px; }.bis-mini-heading > strong { flex: 1; color: #45526b; font-size: 10px; }.bis-mini-heading > small { color: #929daf; font-size: 8px; }
+.bis-requirement { display: flex; align-items: center; gap: 8px; padding: 9px 0; color: #78859a; border-bottom: 1px solid #f0f2f6; font-size: 9px; }.bis-requirement svg { color: #49a483; flex-shrink: 0; }.bis-requirement strong { color: #506078; font-size: 8px; }
+.bis-guide-note { margin: 12px 0 0; color: #8d99aa; font-size: 8px; line-height: 1.6; }
+.bis-tip-card { display: flex; gap: 9px; padding: 12px; background: #fffaf3; border: 1px solid #f5eddf; border-radius: 9px; }.bis-tip-card > span { width: 26px; height: 26px; display: grid; place-items: center; flex-shrink: 0; color: #c9924e; background: #fff0d9; border-radius: 7px; }.bis-tip-card strong { display: block; color: #685842; font-size: 9px; }.bis-tip-card p { margin: 4px 0 0; color: #958a76; font-size: 8px; line-height: 1.6; }
+.bis-preview-summary { overflow: hidden; margin-bottom: 13px; background: #fff; border: 1px solid #e8edf4; border-radius: 9px; box-shadow: 0 2px 5px #20335505; }
+.bis-file-summary { display: flex; align-items: center; gap: 9px; padding: 12px 14px; }.bis-read-status { display: inline-flex; align-items: center; gap: 5px; padding: 5px 7px; color: #438d70; background: #edf8f2; border-radius: 5px; font-size: 8px; font-weight: 600; }
+.bis-stat-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid #edf0f5; }
+.bis-preview-stat { display: flex; flex-direction: column; gap: 5px; padding: 11px 14px; border-right: 1px solid #edf0f5; }.bis-preview-stat:last-child { border-right: 0; }.bis-preview-stat span { color: #8d99ab; font-size: 8px; }.bis-preview-stat strong { color: #35435b; font: 700 15px Manrope, sans-serif; }
+.bis-quality-alert { display: flex; gap: 10px; padding: 11px 13px; margin: 12px 0; color: #796846; background: #fffbf3; border: 1px solid #f4eddd; border-radius: 8px; }
+.bis-quality-icon { width: 26px; height: 26px; display: grid; place-items: center; flex-shrink: 0; color: #c4954d; background: #fff0d7; border-radius: 7px; }
+.bis-quality-alert > div { min-width: 0; }.bis-quality-alert strong { display: block; color: #66573c; font-size: 9px; }.bis-quality-alert ul { display: grid; gap: 3px; padding-left: 15px; margin: 6px 0 0; color: #8b7b5d; font-size: 8px; line-height: 1.5; }.bis-quality-alert > div > small { display: block; margin-top: 5px; color: #9a8b70; font-size: 8px; }
+.bis-table-card { overflow: hidden; }
+.bis-section-title { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 15px 16px 12px; }
+.bis-section-title h2 { margin: 0; color: #36435b; font: 700 11px/1.4 Manrope, sans-serif; }.bis-section-title p { margin: 4px 0 0; color: #919daf; font-size: 8px; line-height: 1.5; }
+.bis-table-outer { width: 100%; overflow-x: auto; border-top: 1px solid #edf0f5; }
+.bis-data-table { width: 100%; border-collapse: collapse; text-align: left; white-space: nowrap; }
+.bis-data-table th { padding: 9px 12px; color: #8c99ad; background: #fafbfc; border-bottom: 1px solid #edf0f5; font-size: 7px; font-weight: 700; letter-spacing: .45px; text-transform: uppercase; }
+.bis-inferred-type { display: block; margin-top: 3px; color: #a0a9b7; font-size: 6px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+.bis-data-table td { max-width: 260px; overflow: hidden; padding: 9px 12px; color: #647189; border-bottom: 1px solid #f0f2f6; font-size: 8px; text-overflow: ellipsis; }
+.bis-data-table tbody tr:last-child td { border-bottom: 0; }.bis-data-table tbody tr:hover { background: #fafbff; }
+.bis-empty-cell { color: #c1c8d2; }
+.bis-overflow-note { padding: 9px 13px; color: #8d99aa; border-top: 1px solid #edf0f5; font-size: 8px; }
+.bis-page-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 1px 5px; }.bis-page-actions > span { display: flex; align-items: center; gap: 6px; color: #929eaf; font-size: 8px; }
+.bis-mapping-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(240px, .75fr); gap: 14px; align-items: start; }
+.bis-mapping-card { overflow: hidden; }.bis-mapping-count { padding: 5px 7px; color: #6874d9; background: #f0f1ff; border-radius: 5px; font-size: 8px; font-weight: 700; white-space: nowrap; }
+.bis-mapping-list { padding: 0 16px; }.bis-mapping-row { min-height: 60px; display: grid; grid-template-columns: minmax(160px, 1fr) minmax(140px, .85fr) auto; align-items: center; gap: 12px; border-top: 1px solid #f0f2f6; }
+.bis-aggregation-setting { display: grid; gap: 8px; padding: 12px 15px; margin: 12px 15px; background: #f8f9ff; border: 1px solid #e8ebfb; border-radius: 8px; }
+.bis-aggregation-setting > span:first-child { display: grid; gap: 4px; }.bis-aggregation-setting strong { color: #48556d; font-size: 9px; }.bis-aggregation-setting small, .bis-aggregation-help { color: #8c97a9; font-size: 8px; line-height: 1.5; }.bis-aggregation-setting .bis-mapping-select-wrap { width: 100%; max-width: 430px; }
+.bis-aggregation-setting { display: grid; gap: 8px; padding: 12px 15px; margin: 12px 15px; background: #f8f9ff; border: 1px solid #e8ebfb; border-radius: 8px; }
+.bis-aggregation-setting > span:first-child { display: grid; gap: 4px; }.bis-aggregation-setting strong { color: #48556d; font-size: 9px; }.bis-aggregation-setting small, .bis-aggregation-help { color: #8c97a9; font-size: 8px; line-height: 1.5; }.bis-aggregation-setting .bis-mapping-select-wrap { width: 100%; max-width: 430px; }
+.bis-field-description { display: flex; flex-direction: column; gap: 4px; }.bis-field-description strong { color: #4a5870; font-size: 9px; font-weight: 600; }.bis-field-description small { color: #929daf; font-size: 8px; line-height: 1.4; }
+.bis-mapping-select-wrap { height: 33px; position: relative; display: flex; align-items: center; border: 1px solid #e6eaf1; border-radius: 6px; }.bis-mapping-select-wrap.mapped { border-color: #dfe3fb; background: #fbfbff; }.bis-mapping-select-wrap select { width: 100%; height: 100%; padding: 0 28px 0 9px; color: #78849a; appearance: none; background: transparent; border: 0; outline: 0; font-size: 8px; }.bis-mapping-select-wrap.mapped select { color: #515f79; font-weight: 600; }.bis-mapping-select-wrap svg { position: absolute; right: 8px; color: #99a4b4; pointer-events: none; }
+.bis-required-tag { color: #8e78d4; font-size: 6px; font-weight: 700; letter-spacing: .4px; }
+.bis-map-foot { display: flex; align-items: center; justify-content: space-between; gap: 9px; padding: 12px 16px; margin-top: 4px; background: #fafbfc; border-top: 1px solid #edf0f5; }.bis-map-foot > span { color: #929daf; font-size: 8px; line-height: 1.45; }
+.bis-analysis-status { display: grid; justify-items: center; gap: 10px; max-width: 620px; padding: 30px 24px; margin: 55px auto; text-align: center; }.bis-analysis-status-icon { width: 42px; height: 42px; display: grid; place-items: center; color: #6876e8; background: #f0f1ff; border-radius: 12px; }.bis-analysis-status.has-error .bis-analysis-status-icon { color: #b55f58; background: #fff1ef; }.bis-analysis-status h1 { margin: 2px 0 0; color: #35435b; font: 700 16px Manrope, sans-serif; }.bis-analysis-status p { max-width: 500px; margin: 0; color: #7d899d; font-size: 10px; line-height: 1.6; overflow-wrap: anywhere; }.bis-analysis-progress { width: 100%; max-width: 220px; height: 3px; margin-top: 8px; overflow: hidden; background: #edf0f6; border-radius: 3px; }.bis-analysis-progress::after { display: block; width: 38%; height: 100%; content: ""; background: #6b78e9; border-radius: inherit; animation: bis-progress 1.2s ease-in-out infinite alternate; }@keyframes bis-progress { to { transform: translateX(165%); } }
+.bis-source-columns { padding: 14px; }.bis-source-columns .bis-mini-heading { margin-bottom: 10px; }.bis-column-chip-list { display: flex; flex-wrap: wrap; gap: 5px; max-height: 155px; overflow-y: auto; }.bis-column-chip-list span { max-width: 100%; overflow: hidden; padding: 5px 7px; color: #6f7d93; background: #f4f6fa; border: 1px solid #eceff4; border-radius: 4px; font-size: 7px; text-overflow: ellipsis; white-space: nowrap; }.bis-source-columns > p { margin: 10px 0 0; color: #969faf; font-size: 8px; line-height: 1.55; }
+.bis-missing-note, .bis-mapping-ready { display: flex; align-items: flex-start; gap: 8px; padding: 11px; background: #fffaf3; border: 1px solid #f4ecde; border-radius: 8px; }.bis-missing-note > span { color: #c18b43; }.bis-missing-note strong, .bis-mapping-ready strong { color: #66583f; font-size: 8px; }.bis-missing-note p { margin: 4px 0 0; color: #92846c; font-size: 8px; line-height: 1.5; }
+.bis-mapping-ready { align-items: center; color: #469475; background: #f0faf5; border-color: #e1f3e9; }.bis-mapping-ready > span { display: flex; flex-direction: column; gap: 4px; }.bis-mapping-ready strong { color: #48755f; }.bis-mapping-ready small { color: #82a18f; font-size: 7px; line-height: 1.5; }
+.bis-dashboard-context { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 11px; margin-bottom: 11px; background: #fff; border: 1px solid #e9edf4; border-radius: 8px; }
+.bis-context-left, .bis-context-actions { display: flex; align-items: center; gap: 9px; }.bis-context-left > span:last-child { display: flex; flex-direction: column; gap: 4px; min-width: 0; }.bis-context-left strong { overflow: hidden; color: #4b5870; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }.bis-context-left small { color: #939eae; font-size: 7px; }.bis-context-actions { flex-shrink: 0; }
+.bis-date-select { height: 30px; display: flex; align-items: center; gap: 6px; padding: 0 8px; color: #8793a7; border: 1px solid #e8ecf2; border-radius: 6px; }.bis-date-select select { width: 95px; color: #69778e; appearance: none; background: transparent; border: 0; outline: 0; font-size: 8px; }.bis-date-select > svg:last-child { margin-left: -5px; pointer-events: none; }
+.bis-clean-note { display: flex; align-items: center; gap: 7px; padding: 9px 11px; margin-bottom: 12px; color: #518a72; background: #f0faf5; border: 1px solid #e4f3ea; border-radius: 7px; font-size: 8px; }
+.bis-dashboard-context + .bis-quality-alert { margin-top: 0; }
+.bis-kpi-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; margin-bottom: 13px; }
+.bis-kpi-card { min-width: 0; padding: 13px 14px 12px; background: #fff; border: 1px solid #e8edf4; border-radius: 9px; box-shadow: 0 2px 5px #20335505; }
+.bis-kpi-top { display: flex; align-items: center; justify-content: space-between; gap: 5px; color: #7d899d; font-size: 8px; }.bis-kpi-icon { width: 27px; height: 27px; display: grid; place-items: center; flex-shrink: 0; color: #6876e8; background: #f0f1ff; border-radius: 7px; }
+.bis-kpi-value { display: block; overflow: hidden; margin: 11px 0 6px; color: #26344c; font: 700 19px/1.1 Manrope, sans-serif; letter-spacing: -.5px; text-overflow: ellipsis; white-space: nowrap; }.bis-kpi-card small { display: -webkit-box; overflow: hidden; color: #9aa4b3; font-size: 7px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }.bis-kpi-card.unavailable .bis-kpi-value { color: #a1aab8; font: 600 11px 'DM Sans', sans-serif; letter-spacing: 0; white-space: normal; }
+.bis-chart-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(290px, .85fr); gap: 12px; margin-bottom: 12px; }
+.bis-chart-card { min-height: 275px; padding: 0 0 12px; overflow: hidden; }.bis-chart-card .bis-section-title { padding: 14px 15px 10px; }.bis-chart-mark { width: 27px; height: 27px; display: grid; place-items: center; flex-shrink: 0; color: #727de5; background: #f0f1ff; border-radius: 7px; }
+.bis-trend-wrap { height: 207px; position: relative; padding: 0 12px 15px 38px; }.bis-trend-svg { width: 100%; height: 100%; overflow: visible; }.bis-chart-gridline { stroke: #edf0f5; stroke-width: 1; }.bis-trend-area { fill: #eef0ff; opacity: .75; }.bis-trend-line { fill: none; stroke: #6573ed; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }.bis-trend-point { fill: #fff; stroke: #6573ed; stroke-width: 2; }.bis-trend-labels { fill: #929daf; font: 8px 'DM Sans', sans-serif; }.bis-trend-y { position: absolute; inset: 4px auto 22px 0; display: flex; flex-direction: column; justify-content: space-between; color: #9ba5b4; font-size: 7px; }
+.bis-breakdown-list { display: grid; gap: 13px; padding: 7px 16px 8px; }.bis-breakdown-item { min-width: 0; }.bis-breakdown-label { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 5px; color: #748198; font-size: 8px; }.bis-breakdown-label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.bis-breakdown-label strong { color: #4a5870; font-size: 8px; font-weight: 600; }.bis-breakdown-track { height: 5px; overflow: hidden; background: #f0f2f7; border-radius: 5px; }.bis-breakdown-track i { height: 100%; display: block; background: linear-gradient(90deg, #7784f1, #9b91eb); border-radius: 5px; }
+.bis-chart-empty { min-height: 195px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }.bis-chart-empty > span, .bis-empty-state > span { width: 37px; height: 37px; display: grid; place-items: center; color: #7c87e8; background: #f0f1ff; border-radius: 10px; }.bis-chart-empty strong { margin-top: 9px; color: #68758a; font-size: 9px; }.bis-chart-empty p { max-width: 240px; margin: 5px 0 0; color: #9aa4b3; font-size: 8px; line-height: 1.55; }
+.bis-observations-row { margin-bottom: 12px; }.bis-observation-card { padding-bottom: 8px; }.bis-derived-pill { display: flex; align-items: center; gap: 4px; padding: 4px 6px; color: #4b9576; background: #eff9f3; border-radius: 4px; font-size: 7px; font-weight: 700; white-space: nowrap; }.bis-observation { display: flex; align-items: flex-start; gap: 8px; padding: 9px 15px; border-top: 1px solid #f0f2f6; }.bis-observation > span { width: 23px; height: 23px; display: grid; place-items: center; flex-shrink: 0; color: #6e78df; background: #f0f0ff; border-radius: 6px; }.bis-observation p { margin: 2px 0; color: #65728a; font-size: 8px; line-height: 1.55; }.bis-empty-state { display: flex; align-items: center; gap: 10px; padding: 12px 15px; border-top: 1px solid #f0f2f6; }.bis-empty-state > span { width: 30px; height: 30px; flex-shrink: 0; }.bis-empty-state p { margin: 0; color: #8e9aac; font-size: 8px; line-height: 1.5; }
+.bis-dashboard-table { margin-bottom: 10px; }.bis-dashboard-table .bis-section-title { align-items: center; }.bis-search { height: 30px; display: flex; align-items: center; gap: 6px; padding: 0 8px; color: #9aa5b4; border: 1px solid #e8ecf2; border-radius: 6px; }.bis-search input { width: 130px; padding: 0; color: #59677e; background: transparent; border: 0; outline: 0; font-size: 8px; }.bis-search input::placeholder { color: #9da7b5; }
+.bis-sortable-table th { padding: 0; }.bis-sortable-table th button { display: flex; align-items: center; gap: 5px; width: 100%; padding: 9px 12px; color: inherit; text-align: left; background: transparent; border: 0; font: inherit; letter-spacing: inherit; text-transform: inherit; }.bis-sortable-table th button:hover { color: #606fe0; background: #f5f6ff; }.bis-sortable-table th button > span { overflow: hidden; text-overflow: ellipsis; }.bis-sortable-table th button > svg { flex-shrink: 0; }.bis-sortable-table th button > i { display: grid; place-items: center; width: 15px; height: 15px; color: #6371e6; background: #ecedff; border-radius: 4px; }.bis-sort-muted { opacity: .4; }
+.bis-table-no-results { padding: 30px; color: #8995a8; font-size: 9px; text-align: center; }
+.bis-table-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 13px; border-top: 1px solid #edf0f5; color: #909bad; font-size: 8px; }.bis-table-footer > div { display: flex; align-items: center; gap: 10px; }.bis-table-footer button { display: inline-flex; align-items: center; gap: 4px; padding: 5px 7px; color: #68758a; background: #fff; border: 1px solid #e8ecf2; border-radius: 5px; font-size: 8px; }.bis-table-footer button:disabled { color: #b3bbc7; background: #fafbfc; cursor: not-allowed; }
+.bis-button-report { color: #fff; background: linear-gradient(135deg, #6674ef, #5863d9); border-color: #606de6; box-shadow: 0 3px 8px #5867de2a; }.bis-button-report:hover { background: #505ed4; transform: translateY(-1px); }
+.bis-assistant-panel { margin-bottom: 12px; overflow: hidden; }.bis-assistant-header { display: flex; align-items: center; gap: 9px; padding: 11px 13px; border-bottom: 1px solid #edf0f5; }.bis-assistant-mark { width: 30px; height: 30px; display: grid; place-items: center; flex-shrink: 0; color: #6875e6; background: #f0f1ff; border-radius: 8px; }.bis-assistant-header > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 4px; }.bis-assistant-header strong { color: #45526a; font-size: 9px; }.bis-assistant-header small { color: #919daf; font-size: 7px; }.bis-assistant-local { display: inline-flex; align-items: center; gap: 5px; padding: 4px 6px; color: #688b7a; background: #eff8f3; border-radius: 4px; font-size: 6px; font-weight: 700; letter-spacing: .4px; }.bis-assistant-local i { width: 5px; height: 5px; background: #6bb18f; border-radius: 50%; }
+.bis-assistant-messages { max-height: 270px; display: flex; flex-direction: column; gap: 9px; overflow: auto; padding: 12px 14px; }.bis-assistant-welcome { display: flex; align-items: flex-start; gap: 8px; }.bis-assistant-welcome > span { width: 23px; height: 23px; display: grid; place-items: center; flex-shrink: 0; color: #727ce0; background: #f0f0ff; border-radius: 6px; }.bis-assistant-welcome p { margin: 0; color: #758197; font-size: 8px; line-height: 1.6; }.bis-assistant-welcome strong { color: #4a5870; }
+.bis-chat-line { display: flex; }.bis-chat-line.user { justify-content: flex-end; }.bis-chat-bubble { max-width: min(80%, 540px); padding: 8px 10px; color: #5e6c83; background: #f4f6fa; border-radius: 4px 8px 8px 8px; font-size: 8px; line-height: 1.6; white-space: pre-wrap; }.bis-chat-line.user .bis-chat-bubble { color: #fff; background: #6876e9; border-radius: 8px 4px 8px 8px; }.bis-chat-bubble small { display: block; margin-bottom: 3px; color: #727de1; font-size: 6px; font-weight: 700; letter-spacing: .5px; }.bis-chat-line.user .bis-chat-bubble small { color: #dfe3ff; }.bis-chat-line.notice .bis-chat-bubble { background: #fff9ef; color: #7d6a4b; }.bis-chat-line.notice .bis-chat-bubble small { color: #ae884b; }.bis-chat-bubble.bis-typing { color: #8d98aa; font-style: italic; }
+.bis-assistant-prompts { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 14px 10px; }.bis-assistant-prompts button { display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px; color: #69768c; background: #fff; border: 1px solid #e8ecf3; border-radius: 5px; font-size: 7px; }.bis-assistant-prompts button:hover { color: #5968df; border-color: #d4d9f9; }
+.bis-assistant-composer { display: flex; align-items: center; gap: 7px; padding: 7px; margin: 0 12px; border: 1px solid #e5e9f1; border-radius: 7px; }.bis-assistant-composer input { flex: 1; min-width: 0; padding: 4px; color: #4f5d75; background: transparent; border: 0; outline: 0; font-size: 8px; }.bis-assistant-composer input::placeholder { color: #9da7b5; }.bis-assistant-composer button { width: 28px; height: 28px; display: grid; place-items: center; flex-shrink: 0; color: #fff; background: #6876ed; border: 0; border-radius: 6px; }.bis-assistant-composer button:disabled { color: #a7afbd; background: #f0f2f6; cursor: not-allowed; }
+.bis-assistant-disclaimer { display: flex; align-items: center; justify-content: center; gap: 5px; padding: 8px 8px 10px; color: #9ba5b3; font-size: 7px; }
+.bis-assistant-error { padding: 8px 10px; margin: 8px 12px 0; color: #a64e4a; background: #fff2f0; border: 1px solid #f5d6d3; border-radius: 6px; font-size: 8px; line-height: 1.5; }
+.bis-assistant-prompts button:disabled { opacity: .55; cursor: not-allowed; }
+.bis-report-view { max-width: 1250px; }.bis-report-meta { display: flex; align-items: center; gap: 9px; padding: 10px 12px; margin-bottom: 10px; background: #fff; border: 1px solid #e8edf4; border-radius: 8px; }.bis-report-meta > span:nth-child(2) { display: flex; flex: 1; flex-direction: column; gap: 4px; min-width: 0; }.bis-report-meta strong { overflow: hidden; color: #46536b; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }.bis-report-meta small { color: #919daf; font-size: 7px; }.bis-report-period { display: inline-flex; align-items: center; gap: 5px; color: #77849a; font-size: 8px; }
+.bis-report-disclaimer { display: flex; align-items: center; gap: 8px; padding: 9px 11px; margin-bottom: 11px; color: #727e97; background: #f0f2ff; border: 1px solid #e7eaff; border-radius: 7px; font-size: 8px; line-height: 1.5; }.bis-report-disclaimer > svg { flex-shrink: 0; color: #6674e2; }.bis-report-disclaimer strong { color: #525f85; }
+.bis-report-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-bottom: 11px; }.bis-report-kpis .bis-kpi-card { padding: 10px 11px; }.bis-report-kpis .bis-kpi-value { font-size: 16px; }
+.bis-report-sections { display: grid; gap: 10px; }.bis-report-section { overflow: hidden; padding-bottom: 10px; }.bis-report-section-heading { display: flex; align-items: center; gap: 8px; padding: 12px 14px 9px; }.bis-report-section-heading > span { width: 25px; height: 25px; display: grid; place-items: center; flex-shrink: 0; color: #6976e3; background: #f0f1ff; border-radius: 7px; }.bis-report-section-heading h2 { margin: 0; color: #36435b; font: 700 10px Manrope, sans-serif; }.bis-report-paragraph { margin: 4px 14px 7px; color: #65728a; font-size: 8px; line-height: 1.65; }.bis-report-chart { max-width: 800px; padding: 6px 10px 0; margin: 2px 14px 5px; background: #fbfcff; border: 1px solid #eef0f5; border-radius: 7px; }.bis-report-chart .bis-trend-wrap { height: 155px; }.bis-report-table-wrap { margin-top: 8px; }.bis-report-table-wrap .bis-data-table { min-width: 520px; }.bis-report-table-wrap .bis-data-table th { white-space: normal; }.bis-report-table-wrap .bis-data-table td { max-width: 420px; white-space: normal; }.bis-report-bullets { display: grid; gap: 6px; padding-left: 27px; margin: 8px 14px; color: #65728a; font-size: 8px; line-height: 1.6; }.bis-report-bullets li::marker { color: #6976e7; }
+.bis-report-endnote { display: flex; align-items: center; gap: 6px; padding: 12px 2px; color: #8793a7; font-size: 8px; }.bis-report-endnote svg { color: #51a17f; }
+.bis-footer { display: flex; justify-content: center; align-items: center; gap: 8px; padding: 16px 5px 4px; color: #a0a9b7; font-size: 7px; }.bis-footer span { display: flex; align-items: center; gap: 5px; }.bis-footer i { width: 3px; height: 3px; background: #c1c8d2; border-radius: 50%; }
+.bis-mobile-scrim { display: none; }.bis-hidden-file-input { display: none; }
+@media (min-width: 1500px) {
+  .bis-content { padding-right: 46px; padding-left: 46px; }
+  .bis-category-card { min-height: 185px; padding: 18px; }
+  .bis-kpi-card { padding: 15px 16px; }.bis-kpi-value { font-size: 21px; }
+}
+@media (max-width: 1120px) {
+  .bis-sidebar { width: 232px; }.bis-main { margin-left: 232px; }.bis-topbar { padding: 0 25px; }.bis-content { padding: 25px 24px 18px; }
+  .bis-category-grid { gap: 10px; }.bis-category-card { padding: 14px; }.bis-chart-grid { grid-template-columns: minmax(0, 1.1fr) minmax(260px, .9fr); }.bis-mapping-row { grid-template-columns: minmax(135px, 1fr) minmax(130px, .9fr) auto; gap: 8px; }
+}
+@media (max-width: 850px) {
+  .bis-sidebar { width: 258px; transform: translateX(-100%); transition: transform .25s ease; box-shadow: 10px 0 30px #1c2a4610; }.bis-sidebar.is-open { transform: translateX(0); }
+  .bis-mobile-scrim { position: fixed; inset: 0; z-index: 15; display: block; background: #17233c66; border: 0; }
+  .bis-main { margin-left: 0; }.bis-topbar { justify-content: flex-start; padding: 0 20px; }.bis-mobile-menu { display: grid; place-items: center; padding: 6px; margin-right: 9px; color: #69778d; background: transparent; border: 0; border-radius: 6px; }.bis-top-right { margin-left: auto; }
+  .bis-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.bis-chart-grid { grid-template-columns: minmax(0, 1.15fr) minmax(250px, .9fr); }.bis-upload-layout, .bis-mapping-layout { grid-template-columns: minmax(0, 1.25fr) minmax(220px, .8fr); }.bis-kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .bis-topbar { height: 57px; padding: 0 12px; }.bis-breadcrumb { gap: 5px; font-size: 9px; }.bis-top-right { gap: 7px; }.bis-top-chip { display: none; }.bis-local-chip { padding: 5px 6px; font-size: 7px; }.bis-user-avatar { width: 27px; height: 27px; }
+  .bis-content { padding: 20px 13px 15px; }  .bis-page-title { align-items: flex-start; flex-direction: column; gap: 12px; margin-bottom: 14px; }.bis-page-title h1 { font-size: 21px; }.bis-page-title p { font-size: 10px; }.bis-title-actions { width: 100%; flex-wrap: wrap; }.bis-title-actions > .bis-button { flex: 1; }.bis-title-actions > .bis-button-report { flex-basis: 100%; order: -1; }
+  .bis-progress { margin: 17px 0 19px; }.bis-progress-step { gap: 5px; }.bis-progress-step > span { width: 20px; height: 20px; font-size: 7px; }.bis-progress-step small { max-width: 49px; font-size: 6px; }.bis-progress-step > i { width: 9px; margin: 0 4px; }
+  .bis-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }.bis-category-card { min-height: 166px; padding: 12px; }.bis-category-card h2 { margin-top: 12px; font-size: 10px; }.bis-category-card p { font-size: 8px; }.bis-category-choose { gap: 4px; padding-top: 9px; font-size: 8px; }.bis-category-card-top > span:last-child { font-size: 8px; }.bis-category-icon { width: 32px; height: 32px; }
+  .bis-how-note { align-items: flex-start; padding: 10px; }.bis-how-note p { font-size: 8px; }
+  .bis-upload-layout, .bis-mapping-layout, .bis-chart-grid { grid-template-columns: minmax(0, 1fr); gap: 10px; }.bis-upload-aside, .bis-mapping-aside { grid-row: 2; }.bis-upload-card { padding: 12px; }.bis-dropzone { min-height: 230px; }.bis-upload-foot { font-size: 7px; }
+  .bis-stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }.bis-preview-stat:nth-child(2) { border-right: 0; }.bis-preview-stat:nth-child(-n + 2) { border-bottom: 1px solid #edf0f5; }.bis-file-summary { flex-wrap: wrap; }.bis-read-status { margin-left: 42px; }.bis-quality-alert { padding: 10px; }.bis-quality-alert ul { padding-left: 13px; }
+  .bis-section-title { padding: 12px; }.bis-section-title p { font-size: 7px; }.bis-data-table th { padding: 8px 10px; }.bis-data-table td { padding: 8px 10px; }
+  .bis-page-actions { align-items: stretch; flex-direction: column-reverse; }.bis-page-actions > .bis-button { width: 100%; }
+  .bis-mapping-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 9px; padding: 10px 0; }.bis-field-description { grid-column: 1; }.bis-mapping-select-wrap { grid-column: 1; grid-row: 2; }.bis-required-tag { grid-column: 2; grid-row: 1; }.bis-map-foot { align-items: flex-start; flex-direction: column; padding: 11px 12px; }.bis-map-foot > .bis-button { width: 100%; }
+  .bis-dashboard-context { align-items: flex-start; flex-direction: column; }.bis-context-actions { width: 100%; justify-content: space-between; }.bis-kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }.bis-kpi-card { padding: 11px; }.bis-kpi-value { font-size: 17px; }.bis-kpi-card small { font-size: 6px; }.bis-report-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }.bis-report-period { max-width: 135px; text-align: right; }.bis-report-period svg { flex-shrink: 0; }
+  .bis-chart-card { min-height: 250px; }.bis-trend-wrap { height: 190px; }.bis-chart-grid { gap: 9px; }.bis-observation-card .bis-section-title { align-items: flex-start; }.bis-search { max-width: 140px; }.bis-search input { width: 83px; }.bis-dashboard-table .bis-section-title { align-items: flex-start; flex-direction: column; }.bis-table-footer { align-items: flex-start; flex-direction: column; }.bis-table-footer > div { align-self: flex-end; }
+  .bis-footer { flex-wrap: wrap; font-size: 6px; }.bis-footer span { width: 100%; justify-content: center; }
+}
+@media (max-width: 380px) {
+  .bis-category-grid { grid-template-columns: 1fr; }.bis-category-card { min-height: 145px; }.bis-progress-step small { max-width: 38px; }.bis-progress-step > i { width: 5px; margin: 0 3px; }.bis-local-chip { font-size: 0; }.bis-local-chip > span { width: 7px; height: 7px; }.bis-kpi-value { font-size: 15px; }
+}
+.bis-insights-section { margin: 0 0 12px; padding: 14px; background: #fff; border: 1px solid #e8edf4; border-radius: 9px; box-shadow: 0 2px 5px #20335505; }
+.bis-insights-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.bis-insights-heading h2 { margin: 3px 0 4px; color: #34425b; font: 700 13px Manrope, sans-serif; }
+.bis-insights-heading p { margin: 0; color: #8793a7; font-size: 8px; line-height: 1.5; }
+.bis-insight-grid, .bis-recommendation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.bis-insight-card, .bis-recommendation-card { min-width: 0; padding: 11px; background: #fbfcff; border: 1px solid #edf0f5; border-radius: 7px; }
+.bis-insight-label { display: inline-flex; align-items: center; gap: 4px; color: #5f6edb; font-size: 7px; font-weight: 700; letter-spacing: .3px; }
+.bis-insight-card h3, .bis-recommendation-card h4 { margin: 7px 0 5px; color: #47546b; font-size: 9px; font-weight: 700; }
+.bis-insight-card > strong { display: block; overflow: hidden; color: #293750; font: 700 15px Manrope, sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+.bis-insight-card > small { display: block; margin-top: 4px; color: #8793a7; font-size: 7px; }
+.bis-insight-card p, .bis-recommendation-card p { margin: 7px 0 0; color: #68758a; font-size: 8px; line-height: 1.55; }
+.bis-recommendations { margin-top: 13px; padding-top: 11px; border-top: 1px solid #edf0f5; }
+.bis-recommendations > h3 { margin: 0 0 8px; color: #47546b; font-size: 9px; }
+.bis-recommendation-card { background: #f9fbff; }
+.bis-recommendation-card > span { color: #7784a0; font-size: 6px; font-weight: 700; letter-spacing: .45px; }
+.bis-recommendation-card h4 { margin-top: 5px; }
+.bis-recommendation-card small { display: block; margin-top: 7px; color: #8b97a9; font-size: 7px; line-height: 1.5; }
+.bis-insights-empty { display: flex; align-items: flex-start; gap: 8px; padding: 11px; color: #8793a7; background: #fbfcff; border: 1px solid #edf0f5; border-radius: 7px; font-size: 8px; line-height: 1.5; }
+.bis-insights-empty svg { flex: 0 0 auto; color: #7985e5; }
+.bis-insights-empty p { margin: 0; }
+@media (max-width: 620px) {
+  .bis-insight-grid, .bis-recommendation-grid { grid-template-columns: 1fr; }
+  .bis-insights-heading { align-items: flex-start; }
+  .bis-insights-heading .bis-derived-pill { flex-shrink: 0; }
+}
+
+.bis-app-shell {
+  --bis-ink: #17233c;
+  --bis-muted: #52617a;
+  --bis-soft: #708099;
+  --bis-line: #e2e8f1;
+  --bis-purple: #6258d9;
+  color: #23314b;
+  background: #f4f6fa;
+  font-size: 15px;
+}
+.bis-sidebar {
+  background: #17233c;
+  border-right-color: #293650;
+}
+.bis-brand { color: #f8faff; font-family: inherit; font-size: 17px; }
+.bis-brand small { color: #aab6cb; font-family: inherit; font-size: 11px; letter-spacing: 1.5px; }
+.bis-workspace-card { background: #202d47; border-color: #33415c; }
+.bis-workspace-mark { color: #c4c0ff; background: #34365f; }
+.bis-workspace-card strong { color: #f1f4fb; font-size: 13px; }
+.bis-workspace-card small { color: #b0bdd1; font-size: 12px; }
+.bis-workspace-card > svg { color: #aab6cb; }
+.bis-side-label, .bis-eyebrow { font-size: 12px; letter-spacing: .9px; }
+.bis-side-label { color: #aab6cb; }
+.bis-nav-item { min-height: 45px; color: #c1ccdc; font-size: 14px; }
+.bis-nav-item:not(:disabled):hover { color: #fff; background: #25334e; }
+.bis-nav-item.active { color: #fff; background: #393969; }
+.bis-nav-item.active .bis-nav-icon, .bis-nav-item.complete .bis-nav-icon { color: #c5c2ff; }
+.bis-nav-item > i { background: #8e87ff; }
+.bis-privacy-card { background: #202d47; border-color: #33415c; }
+.bis-privacy-card strong { color: #f1f4fb; font-size: 13px; }
+.bis-privacy-card p { color: #bdc8d8; font-size: 12px; }
+.bis-privacy-card > span { color: #d0ccff; background: #38385e; }
+.bis-reset-button { color: #c4c2ff; font-size: 13px; }
+.bis-sidebar-owner { border-top-color: #33415c; }
+.bis-sidebar-owner strong { color: #f1f4fb; font-size: 13px; }
+.bis-sidebar-owner small { color: #bdc8d8; font-size: 12px; }
+.bis-owner-menu { color: #bdc8d8; }
+.bis-main { background: #f4f6fa; }
+.bis-topbar { background: #fff; }
+.bis-breadcrumb { color: #687790; font-size: 14px; }
+.bis-breadcrumb strong { color: #263650; }
+.bis-top-chip, .bis-local-chip { font-size: 12px; }
+.bis-content { padding-top: 32px; }
+.bis-page-title { flex-wrap: wrap; align-items: flex-end; }
+.bis-page-title h1 { color: #17233c; font-family: inherit; font-size: 30px; letter-spacing: -.5px; }
+.bis-page-title p { color: #5f6e84; font-size: 15px; }
+.bis-title-actions { flex-wrap: wrap; justify-content: flex-end; }
+.bis-button { min-height: 42px; padding: 0 15px; font-size: 14px; }
+.bis-button-primary { background: #5f55d7; border-color: #5f55d7; }
+.bis-button-primary:hover { background: #4d43c3; }
+.bis-button-quiet { color: #45536b; }
+.bis-progress-step, .bis-progress-step small { font-size: 12px; }
+.bis-category-card h2 { font-family: inherit; font-size: 17px; }
+.bis-category-card p, .bis-category-choose, .bis-how-note p { font-size: 14px; }
+.bis-card, .bis-kpi-card, .bis-insights-section { border-color: #e2e8f1; box-shadow: 0 3px 12px #1f32530a; }
+.bis-section-title h2, .bis-insights-heading h2, .bis-report-section-heading h2 {
+  color: #263650;
+  font-family: inherit;
+  font-size: 20px;
+}
+.bis-section-title p, .bis-insights-heading p, .bis-report-paragraph { color: #63728a; font-size: 14px; }
+.bis-mini-heading > strong, .bis-existing-dataset strong, .bis-file-summary strong,
+.bis-quality-alert strong, .bis-field-description strong, .bis-missing-note strong,
+.bis-mapping-ready strong, .bis-context-left strong, .bis-assistant-header strong {
+  font-size: 14px;
+}
+.bis-mini-heading > small, .bis-existing-dataset small, .bis-file-summary small,
+.bis-field-description small, .bis-mapping-ready small, .bis-context-left small {
+  color: #687790;
+  font-size: 12px;
+}
+.bis-dropzone h2 { font-family: inherit; font-size: 20px; }
+.bis-dropzone p, .bis-format-tags span, .bis-alert, .bis-upload-foot, .bis-requirement,
+.bis-guide-note, .bis-tip-card strong, .bis-tip-card p, .bis-preview-stat span,
+.bis-quality-alert ul, .bis-quality-alert > div > small, .bis-data-table td,
+.bis-overflow-note, .bis-page-actions > span, .bis-aggregation-setting strong,
+.bis-aggregation-setting small, .bis-aggregation-help, .bis-map-foot > span,
+.bis-source-columns > p, .bis-clean-note, .bis-insight-card p, .bis-recommendation-card p,
+.bis-insight-card > small, .bis-recommendation-card small, .bis-insights-empty,
+.bis-assistant-welcome p, .bis-chat-bubble, .bis-assistant-composer input,
+.bis-assistant-error, .bis-report-meta strong, .bis-report-meta small,
+.bis-report-disclaimer, .bis-report-bullets, .bis-report-endnote {
+  font-size: 14px;
+}
+.bis-format-tags span:last-child, .bis-upload-foot, .bis-guide-note,
+.bis-quality-alert > div > small, .bis-insight-card > small,
+.bis-recommendation-card small, .bis-assistant-error, .bis-report-meta small {
+  color: #687790;
+}
+.bis-mapping-row { min-height: 72px; }
+.bis-mapping-select-wrap { height: 42px; }
+.bis-mapping-select-wrap select, .bis-date-select select { color: #40506a; font-size: 14px; }
+.bis-required-tag, .bis-mapping-count, .bis-column-chip-list span, .bis-mapping-ready small { font-size: 12px; }
+.bis-dashboard-context { padding: 12px 14px; }
+.bis-context-left strong { max-width: 44vw; }
+.bis-context-left small, .bis-date-select, .bis-date-select select { font-size: 13px; }
+.bis-kpi-card { padding: 17px; }
+.bis-kpi-top { color: #56657d; font-size: 14px; }
+.bis-kpi-value { margin: 14px 0 8px; color: #17233c; font-family: inherit; font-size: clamp(26px, 2vw, 32px); }
+.bis-kpi-card small { color: #687790; font-size: 12px; }
+.bis-kpi-card.unavailable .bis-kpi-value { font-size: 16px; }
+.bis-report-kpis .bis-kpi-value { font-size: clamp(24px, 2vw, 30px); }
+.bis-chart-card { min-height: 320px; }
+.bis-chart-card .bis-section-title { padding: 18px 20px 14px; }
+.bis-chart-empty p, .bis-chart-empty strong, .bis-chart-legend, .bis-category-label {
+  color: #56657d;
+  font-size: 14px;
+}
+.bis-data-table th { color: #52617a; font-size: 12px; }
+.bis-data-table td { color: #43526a; }
+.bis-insights-section { padding: 20px; }
+.bis-insight-grid, .bis-recommendation-grid { gap: 12px; }
+.bis-insight-card, .bis-recommendation-card { padding: 16px; border-radius: 9px; }
+.bis-insight-label, .bis-recommendation-card > span { font-size: 12px; }
+.bis-insight-card h3, .bis-recommendation-card h4, .bis-recommendations > h3 {
+  color: #34445e;
+  font-size: 16px;
+}
+.bis-insight-card > strong { font-family: inherit; font-size: 22px; white-space: normal; overflow-wrap: anywhere; }
+.bis-assistant-header { padding: 15px 18px; }
+.bis-assistant-header small, .bis-assistant-local, .bis-assistant-disclaimer { font-size: 12px; }
+.bis-assistant-messages { max-height: 390px; padding: 18px; }
+.bis-chat-bubble { padding: 11px 14px; }
+.bis-chat-bubble small { font-size: 12px; }
+.bis-assistant-prompts button { font-size: 13px; }
+.bis-assistant-composer { padding: 9px; }
+.bis-assistant-composer input { font-size: 15px; }
+.bis-assistant-composer button { width: 36px; height: 36px; }
+.bis-assistant-disclaimer { color: #687790; }
+.bis-report-meta strong { font-size: 14px; }
+.bis-report-view .bis-report-section-heading h2 { font-size: 18px; }
+.bis-report-table-wrap .bis-data-table { min-width: 620px; }
+.bis-footer { color: #687790; font-size: 12px; }
+.bis-mobile-menu { color: #35445e; }
+.bis-category-card-top > span:last-child, .bis-required-tag, .bis-requirement strong,
+.bis-breakdown-label, .bis-breakdown-label strong, .bis-derived-pill,
+.bis-observation p, .bis-empty-state p, .bis-search input, .bis-table-footer,
+.bis-table-footer button, .bis-table-no-results, .bis-analysis-status p {
+  font-size: 14px;
+}
+.bis-trend-labels { font: 12px Inter, ui-sans-serif, system-ui, sans-serif; }
+.bis-trend-y { color: #52617a; font-size: 12px; }
+.bis-analysis-status h1 { font-family: inherit; font-size: 22px; }
+
+@media (max-width: 850px) {
+  .bis-title-actions { width: 100%; justify-content: flex-start; }
+  .bis-content { padding: 26px 22px 18px; }
+}
+@media (max-width: 620px) {
+  .bis-content { padding: 22px 15px 16px; }
+  .bis-page-title h1 { font-size: 28px; }
+  .bis-title-actions { align-items: stretch; }
+  .bis-title-actions .bis-button { flex: 1 1 auto; }
+  .bis-context-left strong { max-width: calc(100vw - 130px); }
+  .bis-kpi-card { padding: 13px; }
+  .bis-kpi-value { font-size: clamp(23px, 7vw, 29px); }
+  .bis-kpi-top { font-size: 13px; }
+  .bis-assistant-messages { max-height: 340px; }
+  .bis-chat-bubble { max-width: 92%; overflow-wrap: anywhere; }
+}
+@media (max-width: 380px) {
+  .bis-kpi-grid { grid-template-columns: 1fr; }
+  .bis-top-chip { display: none; }
+  .bis-title-actions .bis-button { flex-basis: 100%; }
+}

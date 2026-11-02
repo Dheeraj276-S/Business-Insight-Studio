@@ -1,0 +1,4 @@
+Date,Order ID,Product,Revenue,Cost,Profit,Quantity,Region
+2026-01-03,O-1,Tea,100,60,40,2,North
+2026-01-15,O-2,Cake,50,30,20,1,South
+2026-02-02,O-3,Tea,200,100,100,4,North
